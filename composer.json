@@ -1,0 +1,33 @@
+{
+  "name": "jaythegeek/worldpay",
+  "type": "library",
+  "description": "A composer package for interacting with the WorldPay REST API in Laravel 5.5",
+  "keywords": [
+    "alvee",
+    "worldPay",
+    "laravel",
+    "payments",
+    "rest",
+    "sdk"
+  ],
+  "homepage": "https://github.com/jaythegeek/laravel-worldpay",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jay the Geek",
+      "email": "jay@jaythegeek.io",
+      "homepage": "https://github.com/jaythegeek",
+      "role": "Full Stack Dev"
+    }
+  ],
+  "require": {
+    "php": "~7.0",
+    "illuminate/support": "~5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jtg\\WorldPay\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
