@@ -7,19 +7,17 @@ use Illuminate\Support\ServiceProvider;
 class WorldPayServiceProvider extends ServiceProvider
 {
     /**
-     * Perform post-registration booting of services.
+     * Summat to go before?
      *
      * @return void
      */
     public function boot()
     {
-        //require __DIR__."/Http/Routes.php";
-
-        //$this->loadViewsFrom(__DIR__.'/Views', 'Worldpay');
+        //
     }
 
     /**
-     * Register any package services.
+     * Register bits and bobs
      *
      * @return void
      */
