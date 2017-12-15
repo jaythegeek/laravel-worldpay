@@ -20,7 +20,7 @@ Otherwise add the service provider in `config/app.php`:
 Jtg\WorldPay\WorldPayServiceProvider::class,
 ```
 
-Publish the vendor files, this will setup your config file in 'config/worldpay.php' and adds a test view to play with, you can find it at 'views/worldpay/worldpay.blade.php'
+Publish the vendor files, this will setup your config file - 'config/worldpay.php' and adds a test view to play with, you can find it here 'views/worldpay/worldpay.blade.php'
 
 ``` bash
 php artisan vendor:publish
@@ -33,7 +33,7 @@ Visit [WorldPay Online][link-worldpay] you can create an account if you don't ha
 
 ## Usage
 
-Don't forget to add this at the top
+Don't forget to add this at the top!!
 ```
 use Jtg\WorldPay\WorldPayServiceProvider as WorldPay;
 ```
