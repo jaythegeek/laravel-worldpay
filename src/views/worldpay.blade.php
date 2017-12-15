@@ -49,7 +49,7 @@ Worldpay.useOwnForm({
     <div class="container mt-4 mb-5">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <form class="" action="<?php echo url('charge') ?>" method="post" id="bookingForm" enctype="multipart/form-data" autocomplete="off">
+                <form class="" action="{{ url('/worldpay/charge') }}" method="post" id="bookingForm" enctype="multipart/form-data" autocomplete="off">
                     <!-- This is for Laravel Security -->
                     {{ csrf_field() }}
 
