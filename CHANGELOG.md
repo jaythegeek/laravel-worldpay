@@ -7,6 +7,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Laravel Auto Discovery
+- Updated Template to Bootstrap 4
 
 ### Deprecated
 - Nothing
