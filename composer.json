@@ -3,7 +3,6 @@
   "type": "library",
   "description": "A composer package for interacting with the WorldPay REST API in Laravel 5.5",
   "keywords": [
-    "alvee",
     "worldPay",
     "laravel",
     "payments",
