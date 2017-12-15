@@ -8,19 +8,11 @@ Though in beta, you may also create orders and fetch orders from the WorldPay On
 To install the Laravel WorldPay package you must use composer, simply add the following to your composer.json file
 
 ``` bash
-"require": {
-    "jaythegeek/worldpay": "@dev"
-}
-$ composer update
+$ composer require jaythegeek/worldpay
 ```
 
-Or
-
-``` bash
-$ composer require jaythegeek/worldpay:@dev
-```
-
-If you are using Laravel 5.5 and above there is no need to add the service provider skip to publishing the vendor files :) Auto Discovery is here!
+If you are using Laravel 5.5 or above there is no need to add the service provider, skip to publishing the vendor files :)
+Auto Discovery is here people!!
 
 Otherwise add the service provider in `config/app.php`:
 
@@ -28,7 +20,7 @@ Otherwise add the service provider in `config/app.php`:
 Jtg\WorldPay\WorldPayServiceProvider::class,
 ```
 
-Finally Publish the package configuration by running this CMD
+Publish the vendor files, this will setup your config file in 'config/worldpay.php' and adds a test view to play with, you can find it at 'views/worldpay/worldpay.blade.php'
 
 ``` bash
 php artisan vendor:publish
