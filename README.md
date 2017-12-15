@@ -1,7 +1,7 @@
 # Laravel WorldPay
 
 Laravel WorldPay is a package that helps you to process WorldPay payments directly from credit or debit cards.
-Though in beta, you may also create orders and fetch orders from the WorldPay REST API.
+Though in beta, you may also create orders and fetch orders from the WorldPay Online REST API.
 
 ## Install
 
@@ -20,7 +20,9 @@ Or
 $ composer require jaythegeek/worldpay:@dev
 ```
 
-Then add the service provider in `config/app.php`:
+If you are using Laravel 5.5 and above there is no need to add the service provider skip to publishing the vendor files :) Auto Discovery is here!
+
+Otherwise add the service provider in `config/app.php`:
 
 ``` bash
 Jtg\WorldPay\WorldPayServiceProvider::class,
@@ -34,24 +36,16 @@ php artisan vendor:publish
 
 ## Configuration
 
-Now go to `config/worldpay.php`.
-
-Set your SDK configuration.
-
-``` bash
-server = sandbox or live
-
-Account credentials from developer portal
-[Test Account]
-sandbox.service = T_C_8b253cda-26d5-4917-bc39-6224c07d63tc
-sandbox.client = T_C_8b253cda-26d5-4917-bc39-6224c07d63tc
-
-[Live Account]
-live.service = T_C_8b253cda-26d5-4917-bc39-6224c07d63tc
-live.client = T_C_8b253cda-26d5-4917-bc39-6224c07d63tc
-```
+Add your WorldPay Online details to the `config/worldpay.php` file.
+Visit [WorldPay Online][link-worldpay] you can create an account if you don't have one already!
 
 ## Usage
+
+Don't forget to add this at the top
+```
+use Jtg\WorldPay\WorldPayServiceProvider as WorldPay;
+```
+
 Copy routes and paste in your route file
 ```php
 Route::get('/worldpay', function () {
@@ -131,5 +125,6 @@ Please use the issue tracker for any possible problems you're having!
 [link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
 [link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/Sheikh-Jtg
+[link-author]: https://github.com/jaythegeek
+[link-worldpay]: https://online.worldpay.com
 [link-contributors]: ../../contributors

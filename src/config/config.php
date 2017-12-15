@@ -1,15 +1,12 @@
 <?php
 return [
-
     /*
     |--------------------------------------------------------------------------
-    | Default Server is sandbox
+    | Connection type to WorldPay Online
     |--------------------------------------------------------------------------
     |
-    | This option controls the server "sandbox" and "live" that will be used on
-    | requests.
-    |
-    | Supported: "sandbox", "live"
+    | Set whether your connection is to the sandbox or live account
+    | Default = sandbox
     |
     */
 
@@ -17,32 +14,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Sandbox Key
+    | Sandbox Credentials
     |--------------------------------------------------------------------------
     |
-    | Sandbox account credentials from developer portal set the service and
-    | client key
+    | Sandbox credentials from https://online.worldpay.com
     |
     */
 
     'sandbox' => array(
-        'service' => 'T_C_8b253cda-26d5-4917-bc39-6224c07d63tc',
-        'client'  => 'T_C_8b253cda-26d5-4917-bc39-6224c07d63tc',
+        'service' => 'T_S_73a95087-8916-4e8e-bbe1-ip349hu93333', // secret key
+        'client'  => 'T_C_475fb1ec-99ab-4a24-8f80-ip349hu93333', // client key
     ),
 
     /*
     |--------------------------------------------------------------------------
-    | Live Key
+    | Live Credentials
     |--------------------------------------------------------------------------
     |
-    | live account credentials from developer portal set the service and
-    | client key
+    | Live credentials from https://online.worldpay.com
     |
     */
 
     'live' => array(
-        'service' => 'T_C_8b253cda-26d5-4917-bc39-6224c07d63tc',
-        'client'  => 'T_C_8b253cda-26d5-4917-bc39-6224c07d63tc',
+        'service' => 'T_S_73a95087-8916-4e8e-bbe1-ip349hu93333', // secret key
+        'client'  => 'T_C_475fb1ec-99ab-4a24-8f80-ip349hu93333', // client key
     ),
 
 ];

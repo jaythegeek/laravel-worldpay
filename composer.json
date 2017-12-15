@@ -1,7 +1,7 @@
 {
   "name": "jaythegeek/worldpay",
   "type": "library",
-  "description": "A composer package for interacting with the WorldPay REST API in Laravel 5.5",
+  "description": "A composer package for interacting with the WorldPay Online REST API in Laravel 5.5",
   "keywords": [
     "worldPay",
     "laravel",
