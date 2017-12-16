@@ -81,7 +81,7 @@
     var form = document.getElementById('bookingForm');
 
 Worldpay.useOwnForm({
-  'clientKey': 'T_C_475fb1ec-99ab-4a24-8f80-f549a1f588f8',
+  'clientKey': '{{ env('WORLDPAY_TEST_CLIENT_KEY') }}',
   'form': form,
   'reusable': false,
   'callback': function(status, response) {
