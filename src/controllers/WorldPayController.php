@@ -12,7 +12,7 @@ class WorldPayController extends Controller {
         $token    = $request->input( 'token' );
         $total    = 50;
         $key      = config('worldpay.sandbox.client');
-        $worldPay = new Jtg\WorldPay\lib\Worldpay($key);
+        $worldPay = new Worldpay($key);
 
         $billing_address = array(
             'address1'    => 'Address 1 here',
