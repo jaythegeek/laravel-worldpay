@@ -27,7 +27,6 @@ class WorldPayServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/Config/config.php'  => config_path('worldpay.php'),
-            __DIR__ . '/Views/worldpay.blade.php' => resource_path('views/worldpay/worldpay.blade.php'),
         ]);
     }
 

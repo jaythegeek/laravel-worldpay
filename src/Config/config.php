@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'server' => "sandbox",
+    'server' => env('WORLDPAY_STATUS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -22,8 +22,8 @@ return [
     */
 
     'sandbox' => array(
-        'service' => 'T_S_73a95087-8916-4e8e-bbe1-ip349hu93333', // secret key
-        'client'  => 'T_C_475fb1ec-99ab-4a24-8f80-ip349hu93333', // client key
+        'service' => env('WORLDPAY_TEST_SERVICE_KEY'), // secret key
+        'client'  => env('WORLDPAY_TEST_CLIENT_KEY'), // client key
     ),
 
     /*
@@ -36,8 +36,8 @@ return [
     */
 
     'live' => array(
-        'service' => 'T_S_73a95087-8916-4e8e-bbe1-ip349hu93333', // secret key
-        'client'  => 'T_C_475fb1ec-99ab-4a24-8f80-ip349hu93333', // client key
+        'service' => env('WORLDPAY_LIVE_SERVICE_KEY'), // secret key
+        'client'  => env('WORLDPAY_LIVE_CLIENT_KEY'), // client key
     ),
 
 ];

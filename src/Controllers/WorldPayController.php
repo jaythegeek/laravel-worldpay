@@ -10,11 +10,12 @@ use App\Http\Controllers\Controller;
 class WorldPayController extends Controller {
     public function charge(Request $request) {
 // Setup the WorldPay Online Connection
-        $token    = $request->input( 'token' );
+        $token    = $request->token;
         $total    = 50;
-        $key      = config('worldpay.sandbox.client');
-        $worldPay = new Worldpay($key);
+        $service_key      = env('WORLDPAY_TEST_SERVICE_KEY'); // Change TEST to LIVE when ready
+        $worldPay = new Worldpay($service_key);
 
+        // Build the Address Array
         $billing_address = array(
             'address1'    => 'Address 1 here',
             'address2'    => 'Address 2 here',
@@ -24,7 +25,7 @@ class WorldPayController extends Controller {
             'state'       => 'state here',
             'countryCode' => 'GB',
         );
-
+        // Ok, Lets try it out!
         try {
             $response = $worldPay->createOrder(array(
                 'token'             => $token,
@@ -32,14 +33,13 @@ class WorldPayController extends Controller {
                 'currencyCode'      => 'GBP',
                 'name'              => "Name on Card",
                 'billingAddress'    => $billing_address,
-                'orderDescription'  => 'Order description',
-                'customerOrderCode' => 'Order code'
+                'orderDescription'  => 'Order Description',
+                'customerOrderCode' => 'Order Code'
             ));
             if ($response['paymentStatus'] === 'SUCCESS') {
                 $worldpayOrderCode = $response['orderCode'];
 
-                echo "<pre>";
-                print_r($response);
+                return view('worldpay::complete')->with('order', $response);
             } else {
 // The card has been declined
                 throw new WorldpayException(print_r($response, true));
@@ -55,5 +55,10 @@ class WorldPayController extends Controller {
 // The card has been declined
             echo 'Error message: ' . $e->getMessage();
         }
+    }
+
+
+    public function test(Request $request) {
+        dd($request->all());
     }
 }

@@ -28,70 +28,28 @@ php artisan vendor:publish
 
 ## Configuration
 
-Add your WorldPay Online details to the `config/worldpay.php` file.
+Add your WorldPay Online details to the `config/worldpay.php` file. For security it is recommended that you set your API keys in your .env file;
+```
+WORLDPAY_STATUS=sandbox
+
+WORLDPAY_LIVE_SERVICE_KEY=T_S_73a95087-8916-4e8e-bbe1-12345678900
+WORLDPAY_LIVE_CLIENT_KEY=T_C_475fb1ec-99ab-4a24-8f80-12345678900
+
+WORLDPAY_TEST_SERVICE_KEY=T_S_73a95087-8916-4e8e-bbe1-12345678900
+WORLDPAY_TEST_CLIENT_KEY=T_C_475fb1ec-99ab-4a24-8f80-12345678900
+```
 Visit [WorldPay Online][link-worldpay] you can create an account if you don't have one already!
 
 ## Usage
 
-Don't forget to add this at the top!!
+Once you have setup your credentials in your .env file, and published the vendor files, the following routes will be made available to you along with test views and an example charge system.
+
 ```
-use Jtg\WorldPay\WorldPayServiceProvider as WorldPay;
+your-domain.com/worldpay
+your-domain.com/worldpay/complete
 ```
 
-Copy routes and paste in your route file
-```php
-Route::get('/worldpay', function () {
-    return view('vendor/jaythegeek/worldpay');
-});
-
-Route::post('/charge', function (\Illuminate\Http\Request $request) {
-    $token    = $request->input( 'token' );
-    $total    = 50;
-    $key      = config('worldpay.sandbox.client');
-    $worldPay = new Jtg\WorldPay\lib\Worldpay($key);
-
-    $billing_address = array(
-        'address1'    => 'Address 1 here',
-        'address2'    => 'Address 2 here',
-        'address3'    => 'Address 3 here',
-        'postalCode'  => 'postal code here',
-        'city'        => 'city here',
-        'state'       => 'state here',
-        'countryCode' => 'GB',
-    );
-
-    try {
-        $response = $worldPay->createOrder(array(
-            'token'             => $token,
-            'amount'            => (int)($total . "00"),
-            'currencyCode'      => 'GBP',
-            'name'              => "Name on Card",
-            'billingAddress'    => $billing_address,
-            'orderDescription'  => 'Order description',
-            'customerOrderCode' => 'Order code'
-        ));
-        if ($response['paymentStatus'] === 'SUCCESS') {
-            $worldpayOrderCode = $response['orderCode'];
-
-           echo "<pre>";
-           print_r($response);
-        } else {
-            // The card has been declined
-            throw new \Jtg\WorldPay\lib\WorldpayException(print_r($response, true));
-        }
-    } catch (Jtg\WorldPay\lib\WorldpayException $e) {
-        echo 'Error code: ' . $e->getCustomCode() . '
-              HTTP status code:' . $e->getHttpStatusCode() . '
-              Error description: ' . $e->getDescription() . '
-              Error message: ' . $e->getMessage();
-
-        // The card has been declined
-    } catch (\Exception $e) {
-        // The card has been declined
-        echo 'Error message: ' . $e->getMessage();
-    }
-});
-```
+Go ahead and extend this as much as you need for your own implementation, updates and more features coming soon!
 
 ## Change log
 
