@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Jtg\WorldPay\Controllers;
 
 use Illuminate\Http\Request;
-use Jtg\WorldPay\lib\Worldpay;
-use Jtg\WorldPay\lib\WorldpayException;
+use Jtg\WorldPay\Tools\Worldpay;
+use Jtg\WorldPay\Tools\WorldpayException;
 use App\Http\Controllers\Controller;
 
 class WorldPayController extends Controller {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jtg\WorldPay\lib;
+namespace Jtg\WorldPay\Tools;
 
 /**
  * PHP library version: 2.0.0

@@ -13,7 +13,7 @@ class WorldPayServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
 
     }
 
@@ -25,12 +25,9 @@ class WorldPayServiceProvider extends ServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__ . '/config/config.php'  => config_path('worldpay.php'),
-            __DIR__ . '/views/worldpay.blade.php' => resource_path('views/worldpay/worldpay.blade.php'),
-            __DIR__ . '/controllers/WorldPayController.php' => app_path('Http/Controllers/WorldPayController.php'),
+            __DIR__ . '/Config/config.php'  => config_path('worldpay.php'),
+            __DIR__ . '/Views/worldpay.blade.php' => resource_path('views/worldpay/worldpay.blade.php'),
         ]);
-
-        $this->app->make('Jtg\WorldPay\WorldPayController');
     }
 
 }

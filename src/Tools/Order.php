@@ -1,5 +1,5 @@
 <?php
-namespace Jtg\WorldPay\lib;
+namespace Jtg\WorldPay\Tools;
 
 define("ORDER_TYPES", serialize(array("ECOM", "MOTO", "RECURRING")));
 

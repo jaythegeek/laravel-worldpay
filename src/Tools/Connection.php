@@ -1,6 +1,6 @@
 <?php
 
-namespace Jtg\WorldPay\lib;
+namespace Jtg\WorldPay\Tools;
 
 class Connection {
 
