@@ -29,6 +29,8 @@ class WorldPayServiceProvider extends ServiceProvider
             __DIR__ . '/views/worldpay.blade.php' => resource_path('views/worldpay/worldpay.blade.php'),
             __DIR__ . '/controllers/WorldPayController.php' => app_path('Http/Controllers/WorldPayController.php'),
         ]);
+
+        $this->app->make('Jtg\WorldPay\WorldPayController');
     }
 
 }

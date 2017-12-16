@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Jtg\WorldPay\lib\Worldpay;
 use Jtg\WorldPay\lib\WorldpayException;
+use App\Http\Controllers\Controller;
 
 class WorldPayController extends Controller {
     public function charge(Request $request) {
