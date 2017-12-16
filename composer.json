@@ -26,7 +26,7 @@
   "autoload": {
     "psr-4": {
       "Jtg\\WorldPay\\": "src/",
-      "Jtg\\WorldPay\\Controllers": "src/controllers/"
+      "Jtg\\WorldPay\\Controllers": "src/controllers"
     }
   },
   "minimum-stability": "dev",
