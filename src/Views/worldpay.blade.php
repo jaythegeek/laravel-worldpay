@@ -67,7 +67,7 @@
 
                     <div class="form-row my-2 text-right">
                        <div class="col">
-                            <input type="submit" value="Place Order" class="btn btn-outline-primary" />
+                            <input type="submit" value="Place Order" class="btn btn-outline-primary mt-4" />
                        </div>
                     </div>
 
