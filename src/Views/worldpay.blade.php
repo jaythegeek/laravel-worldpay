@@ -34,7 +34,7 @@
             <div class="col-md-8 mx-auto">
                 <form action="/worldpay/complete" id="bookingForm" method="post">
 
-
+                    {{ csrf_field() }}
 
                     <div class="form-row my-2">
                         <div class="col">
