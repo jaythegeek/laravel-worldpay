@@ -7,7 +7,7 @@ use Jtg\WorldPay\lib\Worldpay;
 use Jtg\WorldPay\lib\WorldpayException;
 
 class WorldPayController extends Controller {
-    public function charge() {
+    public function charge(Request $request) {
 // Setup the WorldPay Online Connection
         $token    = $request->input( 'token' );
         $total    = 50;
